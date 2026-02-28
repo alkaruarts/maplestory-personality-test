@@ -172,7 +172,7 @@ header img {
 
 .choices:hover {
     cursor: pointer;
-    background-color: #FFCD64;
+    background-color: #64a5ff;
     color: #fbfbfb;
     transform: none;
     transition: transform 150ms;
@@ -200,8 +200,7 @@ header img {
 }
 
 #back-to-home:hover,.share-button:hover {
-    background-color:#FFCD64;
-    border-color: #FFCD64;
+    background-color:#64a5ff;
     color: #fbfbfb;
 }
 
@@ -467,5 +466,6 @@ header img {
         margin-top: 10px;
     }
 }
+
 
 

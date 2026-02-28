@@ -41,14 +41,6 @@ function displayQuiz() {
             ]
         },
         {
-            question:"While wandering Fruitville, you notice nobody questioning a human among the fruits. Looking down, you see your limbs, but realize fruits also have their own…",
-            choices: ["Am I still a human?", "Am I a fruit?"],
-            weights: [
-                {thinkingScore: +1, feelingScore: 0 } , // Weight for first choice
-                {feelingScore: +3, thinkingScore: 0 } , // Weight for second choice
-            ]
-        },
-        {
             question:"An nx item that you’ve had your eye on has been released in ssbs! How many boxes are you gonna buy?",
             choices: ["none; nexon doesn’t deserve my money", "a set or two won’t hurt.. Maybe i’ll get lucky"],
             weights: [
@@ -62,14 +54,6 @@ function displayQuiz() {
             weights: [
                 {introvertScore: +1, extrovertScore: 0 } , // Weight for first choice
                 {extrovertScore: +3, introvertScore: 0 } , // Weight for second choice
-            ]
-        },
-        {
-            question:"As you prepare to leave Fruitville, the Mayor expresses gratitude for visiting and tells you that your FruitCard will arrive in the mail soon.",
-            choices: ["Finally! That was a strange experience", "Was I a fruit the entire time? I feel so confused"],
-            weights: [
-                {thinkingScore: +3, feelingScore: 0 } , // Weight for first choice
-                {feelingScore: +1, thinkingScore: 0 } , // Weight for second choice
             ]
         },
         {
@@ -340,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     backButton.addEventListener('click', function() {
         // Redirect to the home page or perform any other action you want
-        window.location.href = 'https://alkaruarts.github.io/maplestory-personality-test/'; // Replace 'home.html' with the actual URL of your home page
+        window.location.href = 'https://alkaruarts.github.io/maplestory-personality-test/';
     });
 });
 
@@ -353,5 +337,6 @@ function navigateToHomePage() {
     document.getElementById('home').style.display = 'block';
     document.getElementById('quiz-page').style.display = 'none';
 }
+
 
 

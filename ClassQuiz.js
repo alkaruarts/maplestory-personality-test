@@ -81,6 +81,22 @@ function displayQuiz() {
             ]
         },
         {
+            question:"placeholder",
+            choices: ["a", "b"],
+            weights: [
+                {perceivingScore: +3, judgingScore: 0 } , // Weight for first choice
+                {judgingScore: +1, perceivingScore: 0 } , // Weight for second choice
+            ]
+        },
+        {
+            question:"placeholder",
+            choices: ["a", "b"],
+            weights: [
+                {perceivingScore: +3, judgingScore: 0 } , // Weight for first choice
+                {judgingScore: +1, perceivingScore: 0 } , // Weight for second choice
+            ]
+        },
+        {
             question: "Processing your class...",
             choices: ["View my class!"],
             weights: [
@@ -337,6 +353,7 @@ function navigateToHomePage() {
     document.getElementById('home').style.display = 'block';
     document.getElementById('quiz-page').style.display = 'none';
 }
+
 
 
 

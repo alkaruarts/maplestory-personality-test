@@ -2,106 +2,112 @@ function displayQuiz() {
     const questions = [
         {
             question: "You’re just starting on maple and you need to decide on a class to main! Do you...",
-            choices: ["pick something that looks cool!", "look at a tier list on youtube"],
+            choices: ["pick something that looks cool!", "look at a tier list on youtube", "ask your friends who already play for suggestions"],
             weights: [
-                {judgingScore: +3, perceivingScore: 0 }, // Weight for first choice
-                {perceivingScore: +1, judgingScore:0 }, // Weight for second choice
+                {judgingScore: 0, perceivingScore: +2 },
+                {judgingScore: +2, perceivingScore: 0 },
+                {judgingScore: 0, perceivingScore: +1 },
             ]
         },
         {
-            question: "Your fren wants to bring someone you barely know into your ckalos pt.. What will you say?",
-            choices: ["sure new friend!", "hell no my meso/drops"],
+            question: "Your fren wants to bring someone you barely know into your ckalos party.. What will you say?",
+            choices: ["sure new friend!", "no.. my meso/drops", "idk will they grief"],
             weights: [
-                {thinkingScore: +1, feelingScore: 0 }, // Weight for first choice
-                {feelingScore: +3, thinkingScore: 0 } // Weight for second choice
+                {introvertScore: 0, extrovertScore: +2 }, 
+                {introvertScore: +2, extrovertScore: 0 }, 
+                {introvertScore: +1, extrovertScore: 0 }, 
             ]
         },
         {
             question: "Its ssf and you hit a 21 eternal in 10b! Do you tap to 22 or focus on your other equips?",
             choices: ["i’m feeling lucky today", "this is a big dmg increase already and i have gains to make elsewhere"],
             weights: [
-                {intuitionScore: +3, sensingScore: 0 } , // Weight for first choice
-                {sensingScore: +1, intuitionScore: 0 } , // Weight for second choice
+                {thinkingScore: 0, feelingScore: +2 },
+                {thinkingScore: +2, feelingScore: 0 },
             ]
         },
         {
             question: "Someone in your guild’s discord is flexing their gene badge that they just got after several months of running bm. What do you react with?",
             choices: ["“pog”", "“it’s always the same ppl hitting when will it be my turn”"],
             weights: [
-                {perceivingScore: +1, judgingScore: 0 } , // Weight for first choice
-                {judgingScore: +3, perceivingScore: 0 }, // Weight for second choice
+                {thinkingScore: 0, feelingScore: +2 },
+                {thinkingScore: +2, feelingScore: 0 },
             ]
         },
         {
             question: "You had a busy day today and only have 10 minutes to play before reset. Do you...",
             choices: ["do symbol dailies - slow and steady wins the race", "do daily bosses - maybe something will drop!"],
             weights: [
-                {sensingScore: +1, intuitionScore: 0 } , // Weight for first choice
-                {intuitionScore: +3, sensingScore: 0 } , // Weight for second choice
+                {judgingScore: +2, perceivingScore: 0 },
+                {judgingScore: 0, perceivingScore: +2 },
             ]
         },
         {
-            question:"An nx item that you’ve had your eye on has been released in ssbs! How many boxes are you gonna buy?",
-            choices: ["none; nexon doesn’t deserve my money", "a set or two won’t hurt.. Maybe i’ll get lucky"],
+            question:"You’ve just charged 100k nx to your account. What do you spend it on?",
+            choices: ["open some premium surprise boxes for the next best thing", "buy your vac pet subscription (or do wonderberries)", "get a new look with royal face/hairs", "i wouldn't charge 100k nx"],
             weights: [
-                {sensingScore: +1, intuitionScore: 0 } , // Weight for first choice
-                {intuitionScore: +3, sensingScore: 0 } , // Weight for intuition 
+                {sensingScore: +2, intuitionScore: 0 },
+                {sensingScore: 0, intuitionScore: +2 },
+                {sensingScore: +2, intuitionScore: 0 },
+                {sensingScore: 0, intuitionScore: +2 },
             ]
         },
         {
             question:"Maple is under maintenance again. What do you do in the meantime?",
-            choices: ["scroll the subreddit", "play other games"],
+            choices: ["scroll the subreddit", "play other games", "get off your pc and touch grass"],
             weights: [
-                {introvertScore: +1, extrovertScore: 0 } , // Weight for first choice
-                {extrovertScore: +3, introvertScore: 0 } , // Weight for second choice
+                {sensingScore: +2, intuitionScore: 0 },
+                {sensingScore: 0, intuitionScore: +1 },
+                {sensingScore: 0, intuitionScore: +2 },
             ]
         },
         {
             question:"Which map would you prefer to afk in?",
-            choices: ["c1 henesys", "a quiet, scenic hidden map"],
+            choices: ["c1 henesys", "a quiet, scenic hidden map", "endgame town for quick access to shops", "your guild’s hq"],
             weights: [
-                {thinkingScore: +3, feelingScore: 0 } , // Weight for first choice
-                {feelingScore: +1, thinkingScore: 0 } , // Weight for second choice
+                {introvertScore: 0, extrovertScore: +2 },
+                {introvertScore: +2, extrovertScore: 0 },
+                {introvertScore: +1, extrovertScore: 0 },
+                {introvertScore: 0, extrovertScore: +1 },
             ]
         },
         {
             question:"your class just lost -20% fd in the most recent balance patch.. will you",
             choices: ["switch to a stronger class that just got 30% fd", "stick with your class and pray to chang soup it gets buffed"],
             weights: [
-                {extrovertScore: +3, introvertScore: 0 } , // Weight for first choice
-                {introvertScore: +1, extrovertScore: 0 } , // Weight for second choice
+                {thinkingScore: 0, feelingScore: +2 },
+                {thinkingScore: +2, feelingScore: 0 },
             ]
         },
         {
             question:"your mule gets a pitch drop. you think..",
             choices: ["yay a pitch", "why couldn’t it be my main"],
             weights: [
-                {perceivingScore: +3, judgingScore: 0 } , // Weight for first choice
-                {judgingScore: +1, perceivingScore: 0 } , // Weight for second choice
+                {judgingScore: 0, perceivingScore: +2 },
+                {judgingScore: +2, perceivingScore: 0 },
             ]
         },
         {
-            question:"placeholder",
-            choices: ["a", "b"],
+            question:"You are starting new and your friend tells you they can carry you through bosses! Do you accept or refuse?",
+            choices: ["Free carries!", "I want to experience everything on my own."],
             weights: [
-                {perceivingScore: +3, judgingScore: 0 } , // Weight for first choice
-                {judgingScore: +1, perceivingScore: 0 } , // Weight for second choice
+                {introvertScore: 0, extrovertScore: +1 },
+                {introvertScore: +1, extrovertScore: 0 },
             ]
         },
         {
-            question:"placeholder",
-            choices: ["a", "b"],
+            question:"You start cubing and hit a fake 3 line with 2 allstats on your freshly made 22 eternals with 2b left in the bank! Do you:",
+            choices: ["My eternals deserve better!! continue bluecubing", "No meso broke….. settle or purple cube the rest"],
             weights: [
-                {perceivingScore: +3, judgingScore: 0 } , // Weight for first choice
-                {judgingScore: +1, perceivingScore: 0 } , // Weight for second choice
+                {sensingScore: +1, intuitionScore: 0 },
+                {sensingScore: 0, intuitionScore: +1 },
             ]
         },
         {
             question: "Processing your class...",
             choices: ["View my class!"],
             weights: [
-                {extrovertScore: 0, introvertScore: 0 }, // laceholder
-                {introvertScore: 0, extrovertScore: 0}, //Placeholder
+                {extrovertScore: 0, introvertScore: 0 }, // placeholder
             ]
         },
     ]
@@ -353,6 +359,7 @@ function navigateToHomePage() {
     document.getElementById('home').style.display = 'block';
     document.getElementById('quiz-page').style.display = 'none';
 }
+
 
 
 

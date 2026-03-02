@@ -28,18 +28,19 @@ function displayQuiz() {
         },
         {
             question: "Someone in your guild’s discord is flexing their gene badge that they just got after several months of running bm. What do you react with?",
-            choices: ["“pog”", "“it’s always the same ppl hitting when will it be my turn”"],
+            choices: [":pog:", ":its always the same ppl hitting when will it be my turn:"],
             weights: [
-                {thinkingScore: 0, feelingScore: +2 },
                 {thinkingScore: +2, feelingScore: 0 },
+                {thinkingScore: 0, feelingScore: +2 },
             ]
         },
         {
             question: "You had a busy day today and only have 10 minutes to play before reset. Do you...",
-            choices: ["do symbol dailies - slow and steady wins the race", "do daily bosses - maybe something will drop!"],
+            choices: ["do symbol dailies - slow and steady wins the race", "do daily bosses - maybe something will drop!", "do mp - exp is valuable"],
             weights: [
                 {judgingScore: +2, perceivingScore: 0 },
                 {judgingScore: 0, perceivingScore: +2 },
+                {judgingScore: +1, perceivingScore: 0 },
             ]
         },
         {
@@ -57,18 +58,18 @@ function displayQuiz() {
             choices: ["scroll the subreddit", "play other games", "get off your pc and touch grass"],
             weights: [
                 {sensingScore: +2, intuitionScore: 0 },
-                {sensingScore: 0, intuitionScore: +1 },
+                {sensingScore: 0, intuitionScore: +2 },
                 {sensingScore: 0, intuitionScore: +2 },
             ]
         },
         {
-            question:"Which map would you prefer to afk in?",
+            question:"Where would you rather afk?",
             choices: ["c1 henesys", "a quiet, scenic hidden map", "endgame town for quick access to shops", "your guild’s hq"],
             weights: [
-                {introvertScore: 0, extrovertScore: +2 },
+                {introvertScore: 0, extrovertScore: +3 },
+                {introvertScore: +3, extrovertScore: 0 },
                 {introvertScore: +2, extrovertScore: 0 },
-                {introvertScore: +1, extrovertScore: 0 },
-                {introvertScore: 0, extrovertScore: +1 },
+                {introvertScore: 0, extrovertScore: +2 },
             ]
         },
         {
@@ -81,7 +82,7 @@ function displayQuiz() {
         },
         {
             question:"your mule gets a pitch drop. you think..",
-            choices: ["yay a pitch", "why couldn’t it be my main"],
+            choices: ["yay a pitch", "my main could've used this"],
             weights: [
                 {judgingScore: 0, perceivingScore: +2 },
                 {judgingScore: +2, perceivingScore: 0 },
@@ -89,18 +90,20 @@ function displayQuiz() {
         },
         {
             question:"You are starting new and your friend tells you they can carry you through bosses! Do you accept or refuse?",
-            choices: ["Free carries!", "I want to experience everything on my own."],
+            choices: ["Free carries!", "Just for the hard stuff", "I want to experience everything on my own."],
             weights: [
+                {introvertScore: 0, extrovertScore: +1 },
                 {introvertScore: 0, extrovertScore: +1 },
                 {introvertScore: +1, extrovertScore: 0 },
             ]
         },
         {
             question:"You start cubing and hit a fake 3 line with 2 allstats on your freshly made 22 eternals with 2b left in the bank! Do you:",
-            choices: ["My eternals deserve better!! continue bluecubing", "No meso broke….. settle or purple cube the rest"],
+            choices: ["My eternals deserve better!! continue bluecubing", "purple cube the rest", "No meso broke….. settle"],
             weights: [
                 {sensingScore: +1, intuitionScore: 0 },
                 {sensingScore: 0, intuitionScore: +1 },
+                {sensingScore: 0, intuitionScore: +2 },
             ]
         },
         {
@@ -359,6 +362,7 @@ function navigateToHomePage() {
     document.getElementById('home').style.display = 'block';
     document.getElementById('quiz-page').style.display = 'none';
 }
+
 
 
 

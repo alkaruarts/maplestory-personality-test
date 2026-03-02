@@ -13,8 +13,8 @@ function displayQuiz() {
             question: "Your fren wants to bring someone you barely know into your ckalos party.. What will you say?",
             choices: ["sure new friend!", "no.. my meso/drops", "idk will they grief"],
             weights: [
-                {introvertScore: 0, extrovertScore: +2 }, 
-                {introvertScore: +2, extrovertScore: 0 }, 
+                {introvertScore: 0, extrovertScore: +1 }, 
+                {introvertScore: +1, extrovertScore: 0 }, 
                 {introvertScore: +1, extrovertScore: 0 }, 
             ]
         },
@@ -66,10 +66,10 @@ function displayQuiz() {
             question:"Where would you rather afk?",
             choices: ["c1 henesys", "a quiet, scenic hidden map", "endgame town for quick access to shops", "your guild’s hq"],
             weights: [
-                {introvertScore: 0, extrovertScore: +3 },
-                {introvertScore: +3, extrovertScore: 0 },
-                {introvertScore: +2, extrovertScore: 0 },
-                {introvertScore: 0, extrovertScore: +2 },
+                {introvertScore: 0, extrovertScore: +1 },
+                {introvertScore: +1, extrovertScore: 0 },
+                {introvertScore: +1, extrovertScore: 0 },
+                {introvertScore: 0, extrovertScore: +1 },
             ]
         },
         {
@@ -362,6 +362,7 @@ function navigateToHomePage() {
     document.getElementById('home').style.display = 'block';
     document.getElementById('quiz-page').style.display = 'none';
 }
+
 
 
 
